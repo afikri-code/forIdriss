@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Page recette </title>
+   
+</head>
+<body>
+    <div id="recettes">
+    
+    </div>
+
+    <script>
+    fetch('http://localhost:8080/recettes')
+    .then(response => response.json())
+    .then(data => { 
+        console.log(data[0]);
+        let recettesDiv = document.getElementById('recettes');
+
+        if (data) {
+            data.forEach(element => {
+                // Créer un élément <div> pour chaque recette
+                let recetteDiv = document.createElement('div');
+                recetteDiv.innerHTML = `<h2>${element.nom}</h2>
+                    <img src="${element.image}" style="max-width: 100%">
+                    <button onclick="showInstructions('${element.instructions}', this)">Voir les instructions</button>
+                    <p>${element.tempsPreparation}</p><p>${element.tempsCuisson}</p>`;
+                recettesDiv.appendChild(recetteDiv);
+            });
+        } else {
+            recettesDiv.innerHTML = '<p>No recipes found.</p>';
+        }
+    })
+    .catch(error => console.error(error));
+
+
+        function showInstructions(instructions, button) {
+            // Créer un élément <div> pour les instructions
+            let instructionsDiv = document.createElement('div');
+            instructionsDiv.innerHTML = `<h3>Instructions:</h3><p>${instructions}</p>`;
+            // Ajouter les instructions en dessous du bouton qui a été cliqué
+            button.parentNode.insertBefore(instructionsDiv, button.nextSibling);
+        }
+    </script>
+</body>
+</html>
+

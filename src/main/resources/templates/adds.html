@@ -1,0 +1,54 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js"></script>
+</head>
+<body>
+<form id="myForm" action="#" method="post">
+ <!--<label>Nom d'ingrédient:</label>
+  <input id="nom_ingredient" type="text" name="nom_ingredient"><br>
+  <label>type d'ingrédient:</label>
+  <input id="type_ingredient" type="text" name="type_ingredient"><br>  -->
+  <label>Nom de recette:</label>
+  <input id="nom_recette" type="text" name="nom_recette"><br>
+  <label>Nombre d'ingredients:</label>
+  <input type="text" name="numofquestions" id="numID">
+  <button type="button" onclick="createNewElement()">Ajouter ingredients!</button>
+  <div id="list_ingredient"> </div>
+  <label>Instructions:</label>
+  <input id="instructions" type="text" name="instructions"><br>
+  <label>Temps de préparation:</label>
+  <input id="tempsPreparation" type="text" name="tempsPreparation"><br>
+  <label>Temps de cuisson:</label>
+  <input id="tempsCuisson" type="text" name="tempsCuisson" required><br>
+   <label>Image:</label>
+  <input id="image" type="text" name="image" required><br>
+  <button type="submit">Ajouter une recette</button>
+</form>
+<script>
+/*function createNewElement() {
+    var numquestions = document.getElementById("numID").value;
+    var numofquestions = parseInt(numquestions)
+    
+    var questionAnswerHTML = "";
+    for (var i = 1; i <= numofquestions; i++) { 
+       questionAnswerHTML += `
+         <label for="answer${i}">
+             Answer: ${i}
+         </label>
+         <input type="text" 
+                id="nom_ingredient${i}" 
+                placeholder="Le nom ${i}" /><br>
+         <label for="answer${i}">
+              Answer: ${i}
+         </label>
+         <input type="text" 
+                 id="type${i}" 
+                 placeholder="le type ${i}" /><br>
+     `;   
+    } 
+ document.getElementById("list_ingredient").innerHTML = questionAnswerHTML; 
+}*/
+</script>
+</body>
+</html>

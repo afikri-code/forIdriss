@@ -1,0 +1,42 @@
+[
+	{
+		"id_recette": 1,
+		"nom": "recette1",
+		"ingredient": [
+			{
+				"Id_ingredient": 1,
+				"nom": "parmesan",
+				"type": "fromage"
+			},
+			{
+				"Id_ingredient": 2,
+				"nom": "legume",
+				"type": "tomate"
+			}
+		],
+		"instructions": "faire",
+		"tempsPreparation": 55,
+		"tempsCuisson": 55,
+		"image": "https://ileauxepices.com/blog/wp-content/uploads/2015/05/pizza-maison-bolognaise-viande.jpg?fbclid=IwAR0qSK74y6oBAgeYwvudJtjh_OMxbOG14LUgGa5HwHifywJxKCKwHZThzCE"
+	},
+	{
+		"id_recette": 2,
+		"nom": "recette2",
+		"ingredient": [
+			{
+				"Id_ingredient": 3,
+				"nom": "autre",
+				"type": "truc"
+			},
+			{
+				"Id_ingredient": 4,
+				"nom": "legume",
+				"type": "tomate"
+			}
+		],
+		"instructions": "do",
+		"tempsPreparation": 14,
+		"tempsCuisson": 14,
+		"image": "https://i.goopics.net/q8bxl9.jpg"
+	}
+]

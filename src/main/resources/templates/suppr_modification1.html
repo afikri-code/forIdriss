@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Supprimer une recette</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<h1>Supprimer une recette</h1>
+	
+	<form id="suppression" action="#" method="post">
+		
+		<label for="recette-id">ID de la recette :</label>
+		<input type="text" name="recette_id" id="recette_id">
+		
+		<button type="submit">Supprimer</button>
+		
+	</form>
+	
+</body>
+<script>
+$(document).ready(function(){
+	  $("#suppression").submit(function(event){
+	    event.preventDefault();
+	    var formData = {
+	      nom: $("#recette_id").val(),
+	    };
+	    $.ajax({
+	    	  type: "POST",
+	    	  contentType: "application/json",
+	    	  url: "http://localhost:8080/suppr_modification",
+	    	  data: JSON.stringify(formData),
+	    	  success: function (data) {
+	    	    alert(JSON.stringify(data));
+	    	    location.reload();
+	    	  },
+	    	  error: function (xhr, status, error) {
+	    	    alert("Error: " + JSON.stringify(formData));
+	    	  }
+	    	});
+	  });
+	});
+</script>
+</html>
